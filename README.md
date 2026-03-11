@@ -1,13 +1,12 @@
-<<<<<<< HEAD
 # Sistema de Marmitas
 
-Sistema de pedidos para marmitaria com interface gráfica (PyQt6) e banco de dados local.
+Sistema de pedidos para marmitaria com interface gráfica (PyQt6) e banco de dados local (SQLite).
 
 ## ✅ Objetivo
-Fornecer uma forma rápida de executar e testar o sistema em qualquer máquina (Linux/Windows), incluindo:
+Executar e testar o sistema de forma rápida em qualquer máquina (Linux/Windows), incluindo:
 - Instalar dependências (Python + PyQt6)
 - Executar a aplicação (`app.py`)
-- Executar testes de integração rápida (`test_sistema_clean.py`)
+- Rodar testes de fluxo sem UI (`test_sistema_clean.py`)
 
 ---
 
@@ -15,7 +14,7 @@ Fornecer uma forma rápida de executar e testar o sistema em qualquer máquina (
 - **Python 3.10+** instalado (recomendado 3.11+)
 - Git (para clonar este repositório)
 
-> 💡 No Linux, a instalação do Python normalmente vem com `python3` e `pip3`.
+> 💡 No Linux, `python3` e `pip3` costumam vir instalados juntos.
 
 ---
 
@@ -24,7 +23,7 @@ Fornecer uma forma rápida de executar e testar o sistema em qualquer máquina (
 
 ```bash
 git clone https://github.com/<seu_usuario>/<seu_repositorio>.git
-cd "Sistema github"  # ou nome da pasta criada pelo git clone
+cd "<nome_da_pasta>"  # normalmente "Sistema github"
 ```
 
 2. Execute o setup (cria venv e instala dependências):
@@ -43,27 +42,12 @@ cd "Sistema github"  # ou nome da pasta criada pelo git clone
 
 ---
 
-## 📤 Publicar no GitHub
-Se você ainda não tem um repositório no GitHub, crie um e, a partir da raiz do projeto, execute:
-
-```bash
-git init
-git add .
-git commit -m "Inicializar projeto Sistema de Marmitas"
-# Substitua as URLs abaixo pela URL do seu repositório
-git remote add origin https://github.com/<seu_usuario>/<seu_repositorio>.git
-git push -u origin main
-```
-
-> ⚠️ Ajuste o nome da branch (`main`/`master`) conforme sua configuração.
-
----
-
-## 🧪 Como testar rapidamente
-O repositório inclui scripts de teste que simulam um fluxo completo de pedido sem abrir a GUI.
+## 🧪 Como testar rapidamente (sem GUI)
+O projeto inclui scripts para testar o fluxo de pedidos sem abrir a interface:
 
 ```bash
 python test_sistema_clean.py
+python test_sistema.py
 ```
 
 Esses scripts:
@@ -73,18 +57,16 @@ Esses scripts:
 
 ---
 
-## 🗂️ Estrutura principal do projeto
-
-- `app.py` & `main.py`: entrada principal da aplicação (GUI)
-- `pratos.py`, `pedidos.py`, `pedido.py`: lógica de negócio
-- `admin_panel.py`: painel de administração (cadastro de pratos, relatórios, etc)
-- `config.py`: configurações (senha de admin e caminhos de arquivos)
-- `pedidos.db`: banco de dados SQLite (gera na primeira execução)
+## 🧭 Arquivos principais
+- `app.py` – interface gráfica
+- `pratos.py` – cadastro/armazenamento de pratos (`storage.json`)
+- `pedidos.py` – persistência de pedidos (SQLite)
+- `config.py` – configurações simples (senha admin em `config.json`)
+- `storage.json` – dados iniciais de pratos
 
 ---
 
-## 📦 Dependências
-Dependências principais (listadas em `requirements.txt`):
+## 📦 Dependências (requirements.txt)
 - PyQt6
 - pandas
 - reportlab
@@ -92,32 +74,16 @@ Dependências principais (listadas em `requirements.txt`):
 
 ---
 
-## 👥 Contribuindo / Testando em outro computador
-- Certifique-se de que o `venv/` NÃO está versionado (veja `.gitignore`).
-- Ao clonar, crie um novo ambiente virtual e instale as dependências.
+## 👥 Avisos importantes
+- Não versionar `venv/` (já está no `.gitignore`).
+- Se quiser começar com o projeto “limpo”, remova:
 
----
-
-## 📝 Notas úteis
-- Na primeira vez que acessar o **Painel Admin**, o sistema pedirá para configurar uma senha de administrador.
-- O arquivo de configuração `config.json` fica na raiz do projeto e contém o hash da senha.
-- O banco de dados `pedidos.db` também é gerado na raiz do projeto.
+```bash
+rm -rf venv/ pedidos.db debug.log relatorio_pedidos.csv
+```
 
 ---
 
 ## 📄 Documentação adicional
 - `DEPLOYMENT_GUIDE.txt`: guia de instalação e distribuição
 - `GUIA_OPERACAO.txt`: guia de uso da aplicação
-
----
-
-## 💡 Dica (Windows)
-Em Windows, se houver problemas com acentuação ou encoding, abra o PowerShell e execute:
-
-```powershell
-chcp 65001
-```
-=======
-# sistema-pdv-marmitaria
-Sistema de Marmitas — Aplicativo de gestão de pedidos para marmitaria com interface gráfica (PyQt6) e banco de dados local (SQLite), feito para facilitar o cadastro de pratos, emissão de comandas e controle de pedidos.
->>>>>>> 9a3e0444a82af8300de7acb5f194c65f0269f228

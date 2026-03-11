@@ -1,0 +1,35 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Virtual environments
+venv/
+.env/
+
+# VS Code
+.vscode/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Database and runtime artifacts
+pedidos.db
+debug.log
+storage.json
+relatorio_pedidos.csv
+
+# Logs / exports
+*.log
+*.csv
+*.xlsx
+*.pdf
+
+# Installer artifacts
+installer/*.desktop
+installer/*.log
+
+# Ignore any DB created as part of tests
+*.db

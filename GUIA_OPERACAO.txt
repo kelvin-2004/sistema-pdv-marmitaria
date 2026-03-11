@@ -1,0 +1,394 @@
+╔══════════════════════════════════════════════════════════════════════════════╗
+║                          GUIA DE OPERAÇÃO                                   ║
+║                    Sistema de Marmitas - Kelvin                             ║
+║                                                                              ║
+║                         Versão: Produção v1.0                              ║
+║                         Data: 3 de dezembro de 2025                        ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+
+
+═══════════════════════════════════════════════════════════════════════════════
+1. INICIAR O APLICATIVO
+═══════════════════════════════════════════════════════════════════════════════
+
+OPÇÃO 1: Terminal (Recomendado)
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ $ cd "<pasta_do_projeto>"                                                │
+│ $ python3 -m venv venv                     # Criar ambiente (se não existir) │
+│ $ source venv/bin/activate                 # Ativar ambiente virtual       │
+│ $ python app.py                            # Iniciar aplicativo           │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+OPÇÃO 2: Executar diretamente do Python (sem ativar venv)
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ $ <pasta_do_projeto>/venv/bin/python app.py                              │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+OPÇÃO 3: Duplo clique em app.py (se Python estiver associado)
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ Localize o arquivo: <pasta_do_projeto>/app.py                             │
+│ Duplo clique para executar                                                  │
+└────────────────────────────────────────────────────────────────────────────────┘
+
+
+═══════════════════════════════════════════════════════════════════════════════
+2. TELA INICIAL - MENU PRINCIPAL
+═══════════════════════════════════════════════════════════════════════════════
+
+Gradiente roxo com duas opções:
+
+┌─────────────────────────────────────────────────────────────┐
+│                                                               │
+│               Sistema de Marmitas - Kelvin                 │
+│                                                               │
+│                                                               │
+│                      [Novo Pedido]                          │
+│                                                               │
+│                     [Painel Admin]                          │
+│                                                               │
+└─────────────────────────────────────────────────────────────┘
+
+NOVO PEDIDO:  Iniciar fluxo de criação de novo pedido
+PAINEL ADMIN: Acessar painel de administração (gerenciar pratos, pedidos, etc)
+
+
+═══════════════════════════════════════════════════════════════════════════════
+3. FLUXO: NOVO PEDIDO (Passo a Passo)
+═══════════════════════════════════════════════════════════════════════════════
+
+PASSO 1: DADOS DO CLIENTE
+─────────────────────────────────────────────────────────────
+┌─────────────────────────────────────────────────────────────┐
+│ Dados do Cliente                                            │
+│                                                               │
+│ Nome: [_____________________]  (obrigatório)               │
+│ Celular: [(11) 98765-____]     (formatado automaticamente)  │
+│ Endereço: [_____________________]                           │
+│ Número: [___]                                               │
+│ Bairro: [_____________________]                             │
+│ CEP: [00000-000]                                            │
+│ Observações: [_____________________]                        │
+│                                                               │
+│           [← Voltar]            [✓ Continuar]             │
+└─────────────────────────────────────────────────────────────┘
+
+Preencha os dados do cliente:
+  • Nome é obrigatório
+  • Celular será formatado automaticamente para (XX) XXXXX-XXXX
+  • Número da casa é opcional
+  • Observações podem incluir: andar, ponto de referência, etc
+
+Clique "Continuar" para próximo passo
+
+
+PASSO 2: SELEÇÃO DE PRATOS
+─────────────────────────────────────────────────────────────
+┌─────────────────────────────────────────────────────────────┐
+│ Selecione os Pratos                                         │
+│                                                               │
+│ MARMITA                                                      │
+│   Linguiça Toscana - R$ 17.00       [1] [+ -]              │
+│   Costela - R$ 22.00                [0] [+ -]              │
+│   Parmegiana de Frango - R$ 17.00   [0] [+ -]              │
+│   Frango à Milanesa - R$ 17.00      [0] [+ -]              │
+│   Bisteca - R$ 17.00                [0] [+ -]              │
+│                                                               │
+│ BEBIDAS                                                      │
+│   Refrigerante Lata - R$ 7.00       [0] [+ -]              │
+│   Tubaína 2L - R$ 9.00              [0] [+ -]              │
+│                                                               │
+│ COMBO                                                        │
+│   Combo Parmegiana com Refrigerante [0] [+ -]              │
+│     - R$ 22.00                                              │
+│                                                               │
+│           [← Voltar]            [✓ Continuar]             │
+└─────────────────────────────────────────────────────────────┘
+
+Selecione os pratos:
+  • Use os spinboxes (+ e -) para ajustar quantidade
+  • Pratos estão organizados por categoria
+  • Selecione pelo menos 1 prato
+  • O valor unitário aparece ao lado do nome
+
+Clique "Continuar" para próximo passo
+
+
+PASSO 3: FORMA DE PAGAMENTO
+─────────────────────────────────────────────────────────────
+┌─────────────────────────────────────────────────────────────┐
+│ Forma de Pagamento                                          │
+│                                                               │
+│ Total do Pedido: R$ 73.00 (em VERDE)                       │
+│                                                               │
+│ Pagamento: [Dinheiro ▼]                                    │
+│                                                               │
+│ Valor Recebido: [50,00]                                    │
+│ ❌ Valor insuficiente! Mínimo: R$ 73,00                   │
+│                                                               │
+│ ou (para PIX)                                               │
+│                                                               │
+│ Status PIX: [Recebido ▼]                                   │
+│                                                               │
+│           [← Voltar]            [✓ Continuar]             │
+└─────────────────────────────────────────────────────────────┘
+
+Selecione forma de pagamento:
+
+  ✓ DINHEIRO:
+    - Campo "Valor Recebido" aparece
+    - Sistema valida: se insuficiente, mostra erro em vermelho
+    - Bloqueia "Continuar" se valor for insuficiente
+    - Exemplo: Total R$ 73, deve receber mín R$ 73
+
+  ✓ PIX:
+    - Campo "Status PIX" aparece
+    - Opções: Recebido, Aguardando, Confirmado, etc
+    - Não requer validação de valor
+
+  ✓ CARTÃO:
+    - Sem campos adicionais
+    - Processado normalmente
+
+  ✓ JÁ FOI PAGO NO PIX:
+    - Sem campos adicionais
+    - Indicado para pagamentos pré-feitos
+
+Clique "Continuar" (apenas se validação passar)
+
+
+PASSO 4: PREVIEW DA COMANDA
+─────────────────────────────────────────────────────────────
+┌─────────────────────────────────────────────────────────────┐
+│ Comanda - Prévia do Pedido                                 │
+│                                                               │
+│ ==================================================           │
+│ COMANDA DE PEDIDO                                           │
+│ ==================================================           │
+│ Cliente: João da Silva                                      │
+│ Celular: (11) 98765-4321                                    │
+│ Endereço: Rua das Flores, 123                               │
+│ Bairro: Centro                                              │
+│                                                               │
+│ ==================================================           │
+│ ITENS:                                                       │
+│   2x Linguiça Toscana - R$ 34.00                            │
+│   1x Costela - R$ 22.00                                     │
+│   1x Parmegiana de Frango - R$ 17.00                        │
+│ ==================================================           │
+│                                                               │
+│ ==================================================           │
+│ TOTAL: R$ 73.00                                             │
+│ Pagamento: Dinheiro                                         │
+│ Troco: R$ -13.00                                            │
+│ Observações: Deixar no portão                               │
+│ ==================================================           │
+│ Obrigado pela sua compra!                                   │
+│                                                               │
+│ [← Voltar] [📋 Copiar] [💾 Registrar] [🖨️ Imprimir]      │
+└─────────────────────────────────────────────────────────────┘
+
+Opções na prévia:
+
+  [← Voltar]
+    Volta para formulário de pagamento para editar
+
+  [📋 Copiar]
+    Copia a comanda para a área de transferência
+    Útil para enviar por WhatsApp ou email
+
+  [💾 Registrar (sem imprimir)]
+    Salva o pedido no banco de dados SEM imprimir
+    Útil se a impressora estiver com problema
+
+  [🖨️ Imprimir e Registrar]
+    OPÇÃO RECOMENDADA
+    • Imprime na impressora térmica
+    • Salva o pedido no banco
+    • Volta ao menu principal
+
+RESULTADO:
+  ✓ Pedido criado e salvo com sucesso
+  ✓ Comanda impressa
+  ✓ ID do pedido exibido na barra de status
+
+
+═══════════════════════════════════════════════════════════════════════════════
+4. PAINEL ADMINISTRATIVO
+═══════════════════════════════════════════════════════════════════════════════
+
+Clique "Painel Admin" no menu principal para acessar 4 abas:
+
+┌─────────────────────────────────────────────────────────────┐
+│ [Pratos] [Pedidos] [Vendas] [Cancelar]                      │
+│                                                               │
+│ ABA 1: PRATOS                                               │
+│ ────────────────────────────────────────────────────────────│
+│ Tabela de pratos com:                                       │
+│  • Nome do prato                                            │
+│  • Preço                                                     │
+│  • Categoria (Marmita, Bebida, etc)                         │
+│                                                               │
+│ Botões:                                                      │
+│  • Adicionar novo prato                                     │
+│  • Editar prato existente                                   │
+│  • Remover prato                                            │
+│                                                               │
+│ ABA 2: PEDIDOS                                              │
+│ ────────────────────────────────────────────────────────────│
+│ Tabela com histórico de pedidos:                            │
+│  • Número do pedido (#001, #002, etc)                       │
+│  • Nome do cliente                                          │
+│  • Total (R$)                                               │
+│  • Status (Em preparo, Despachado)                          │
+│  • Data/Hora                                                │
+│                                                               │
+│ Filtros:                                                     │
+│  • Período: Hoje / Esta Semana / Este Mês                   │
+│  • Status: Em preparo / Despachado / Todos                  │
+│  • Busca por cliente (digitando nome)                       │
+│                                                               │
+│ ABA 3: VENDAS                                               │
+│ ────────────────────────────────────────────────────────────│
+│ Relatório de vendas com:                                    │
+│  • Total geral                                              │
+│  • Total por período                                        │
+│  • Quantidade de pedidos                                    │
+│  • Ticket médio                                             │
+│                                                               │
+│ Botões de export:                                           │
+│  • [📊 Exportar XLSX] - Planilha Excel                      │
+│  • [📄 Exportar PDF] - Relatório em PDF                     │
+│                                                               │
+│ ABA 4: CANCELAR PEDIDO                                      │
+│ ────────────────────────────────────────────────────────────│
+│ Cancela um pedido por número:                               │
+│  • Digite o número do pedido                                │
+│  • Clique "Cancelar"                                        │
+│  • Sistema reorganiza IDs automaticamente                   │
+│                                                               │
+└─────────────────────────────────────────────────────────────┘
+
+
+═══════════════════════════════════════════════════════════════════════════════
+5. EXECUTAR TESTES
+═══════════════════════════════════════════════════════════════════════════════
+
+Para validar o sistema:
+
+TESTE 1: Teste completo com banco limpo (RECOMENDADO)
+┌─────────────────────────────────────────────────────────────┐
+│ $ python test_sistema_clean.py                              │
+│                                                               │
+│ Resultado: 9 testes, todos devem passar                     │
+│ Tempo: ~2 segundos                                          │
+└─────────────────────────────────────────────────────────────┘
+
+TESTE 2: Teste com banco existente
+┌─────────────────────────────────────────────────────────────┐
+│ $ python test_sistema.py                                    │
+│                                                               │
+│ Resultado: 9 testes, todos devem passar                     │
+│ Verifica com dados históricos                               │
+└─────────────────────────────────────────────────────────────┘
+
+MIGRAÇÃO: Organizar banco se necessário
+┌─────────────────────────────────────────────────────────────┐
+│ $ python migrate_db.py                                      │
+│                                                               │
+│ • Adiciona colunas faltantes                                │
+│ • Reorganiza IDs eliminando gaps                            │
+│ • Mantém dados existentes                                   │
+└─────────────────────────────────────────────────────────────┘
+
+
+═══════════════════════════════════════════════════════════════════════════════
+6. LOCALIZAÇÃO DOS ARQUIVOS
+═══════════════════════════════════════════════════════════════════════════════
+
+Pasta principal:
+/home/master/Área de trabalho/Sistema/
+
+Arquivos principais:
+├── app.py                    # Aplicativo principal
+├── admin_panel.py            # Painel administrativo
+├── pedidos.py               # Banco de dados (lógica)
+├── pratos.py                # Gerenciamento de pratos
+├── printer.py               # Controle de impressora térmica
+├── pedido.py                # Utilitários de pedido
+│
+├── pedidos.db               # Banco de dados SQLite (criado automaticamente)
+├── storage.json             # Armazenamento de pratos
+│
+├── test_sistema.py          # Teste com dados acumulados
+├── test_sistema_clean.py    # Teste com banco limpo ← RECOMENDADO
+├── migrate_db.py            # Script de migração
+├── RELATORIO_TESTES.txt     # Relatório de testes
+│
+└── venv/                    # Ambiente virtual Python
+    └── bin/
+        └── python           # Python 3.12.3
+
+
+═══════════════════════════════════════════════════════════════════════════════
+7. CHECKLIST DE OPERAÇÃO
+═══════════════════════════════════════════════════════════════════════════════
+
+Antes de usar em produção:
+
+□ Verificar se Python 3.12+ está instalado
+□ Verificar se PyQt6 está instalado no venv
+□ Verificar se impressora térmica está conectada via USB
+□ Executar test_sistema_clean.py (deve retornar 9/9 ✓)
+□ Fazer um pedido de teste completo (cliente → pratos → pagamento → print)
+□ Verificar se dados foram salvos em pedidos.db
+□ Verificar relatório de vendas no painel admin
+□ Testar exportação XLSX e PDF
+□ Treinar operadores com o fluxo
+
+Após iniciar operação:
+
+□ Executar test_sistema_clean.py semanalmente
+□ Fazer backup de pedidos.db periodicamente
+□ Monitorar espaço em disco
+□ Verificar logs de erro se alguma operação falhar
+
+
+═══════════════════════════════════════════════════════════════════════════════
+8. RESOLUÇÃO DE PROBLEMAS
+═══════════════════════════════════════════════════════════════════════════════
+
+PROBLEMA: "ImportError: No module named 'PyQt6'"
+SOLUÇÃO:
+  $ source venv/bin/activate
+  $ pip install PyQt6==6.10.0
+
+PROBLEMA: "Impressora térmica não conecta"
+SOLUÇÃO:
+  1. Verificar se impressora está conectada via USB
+  2. Verificar ID do vendor/product da impressora
+  3. Editar printer.py e atualizar IDs se necessário
+  4. Executar como root: sudo python app.py
+
+PROBLEMA: "Erro ao salvar pedido no banco"
+SOLUÇÃO:
+  1. Executar migrate_db.py para reorganizar banco
+  2. Deletar pedidos.db (será recriado com novo schema)
+  3. Verificar permissões de escrita na pasta
+
+PROBLEMA: "Dados desapareceram após restart"
+SOLUÇÃO:
+  Dados estão em pedidos.db - arquivo não foi deletado?
+  Verificar com: sqlite3 pedidos.db ".tables"
+
+═══════════════════════════════════════════════════════════════════════════════
+SUPORTE
+═══════════════════════════════════════════════════════════════════════════════
+
+Em caso de dúvidas:
+• Consulte RELATORIO_TESTES.txt para detalhes técnicos
+• Execute test_sistema_clean.py para validar funcionalidade
+• Verifique os comentários no código em app.py, pedidos.py, etc
+
+═══════════════════════════════════════════════════════════════════════════════
+FIM DO GUIA
+═══════════════════════════════════════════════════════════════════════════════

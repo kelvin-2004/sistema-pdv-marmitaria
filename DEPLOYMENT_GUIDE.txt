@@ -1,0 +1,88 @@
+╔══════════════════════════════════════════════════════════════════════════════╗
+║                    COMO USAR O SISTEMA NO SEU COMPUTADOR                     ║
+║                                                                              ║
+║              Guia: Deployment & Distribuição do Programa                    ║
+║                                                                              ║
+║           (Para você e possíveis usuários no futuro)                        ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+
+
+═══════════════════════════════════════════════════════════════════════════════
+1) RODANDO LOCALMENTE (DESENVOLVIMENTO / TESTES)
+═══════════════════════════════════════════════════════════════════════════════
+
+✅ Este é o modo mais simples e recomendado para contribuir e testar o sistema.
+
+PASSO 1: Clone este repositório
+```bash
+git clone https://github.com/<seu_usuario>/<seu_repositorio>.git
+cd "<nome_da_pasta>"  # normalmente "Sistema github"
+```
+
+PASSO 2: Execute o setup (cria venv e instala dependências)
+```bash
+./setup.sh
+```
+
+PASSO 3: Execute o sistema
+```bash
+./run.sh
+```
+
+> Dica: se quiser reinstalar dependências ou recriar o venv, apague a pasta `venv/` e rode `./setup.sh` novamente.
+
+
+═══════════════════════════════════════════════════════════════════════════════
+2) TESTES AUTOMATIZADOS (SEM GUI)
+═══════════════════════════════════════════════════════════════════════════════
+
+Há dois scripts de teste que rodam o fluxo de pedidos sem precisar abrir a interface gráfica.
+
+```bash
+python test_sistema_clean.py
+python test_sistema.py
+```
+
+Eles criam (ou recriam) o banco SQLite (`pedidos.db`) e geram pedidos de exemplo.
+
+
+═══════════════════════════════════════════════════════════════════════════════
+3) ARQUIVOS IMPORTANTES NO PROJETO
+═══════════════════════════════════════════════════════════════════════════════
+
+- `app.py` - interface gráfica principal (PyQt6)
+- `pratos.py` - gerencia cadastro/armazenamento de pratos (`storage.json`)
+- `pedidos.py` - persistência de pedidos no banco SQLite
+- `config.py` - configurações simples (senha admin no `config.json`)
+- `storage.json` - dados iniciais dos pratos (versão inicial)
+- `pedidos.db` - banco de dados (gerado automaticamente)
+
+
+═══════════════════════════════════════════════════════════════════════════════
+4) PUBLICANDO NO GITHUB
+═══════════════════════════════════════════════════════════════════════════════
+
+Se ainda não tiver repositório remoto, crie um no GitHub e vincule-o:
+
+```bash
+git init
+git add .
+git commit -m "Inicializa projeto Marmitaria"
+# Substitua a URL abaixo pela do seu repositório
+git remote add origin https://github.com/<seu_usuario>/<seu_repositorio>.git
+git push -u origin main
+```
+
+> Dica: ajuste a branch (`main` / `master`) conforme sua configuração.
+
+
+═══════════════════════════════════════════════════════════════════════════════
+5) LIMPEZA RÁPIDA (REMOVER ARTEFATOS LOCAIS)
+═══════════════════════════════════════════════════════════════════════════════
+
+Para começar com o projeto limpo:
+
+```bash
+rm -rf venv/ pedidos.db debug.log relatorio_pedidos.csv
+```
+

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Sistema de Marmitas
 
 Sistema de pedidos para marmitaria com interface gráfica (PyQt6) e banco de dados local.
@@ -116,3 +117,7 @@ Em Windows, se houver problemas com acentuação ou encoding, abra o PowerShell 
 ```powershell
 chcp 65001
 ```
+=======
+# sistema-pdv-marmitaria
+Sistema de Marmitas — Aplicativo de gestão de pedidos para marmitaria com interface gráfica (PyQt6) e banco de dados local (SQLite), feito para facilitar o cadastro de pratos, emissão de comandas e controle de pedidos.
+>>>>>>> 9a3e0444a82af8300de7acb5f194c65f0269f228
